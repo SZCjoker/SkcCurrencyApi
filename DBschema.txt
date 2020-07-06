@@ -1,0 +1,26 @@
+﻿Currency
+-----------------
+id 
+
+name     key
+
+cname
+
+cdate
+
+udate
+
+state
+
+//===================================
+CurrencyDetail
+-------------
+id
+
+name fk
+
+cashsale
+
+cashbuy
+
+lastupdatetime

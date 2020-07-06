@@ -1,0 +1,6 @@
+D:\source\repos\SkcCurrencyApi\DataConnetor\bin\Debug\netstandard2.0\DataConnector.deps.json
+D:\source\repos\SkcCurrencyApi\DataConnetor\bin\Debug\netstandard2.0\DataConnector.dll
+D:\source\repos\SkcCurrencyApi\DataConnetor\bin\Debug\netstandard2.0\DataConnector.pdb
+D:\source\repos\SkcCurrencyApi\DataConnetor\obj\Debug\netstandard2.0\DataConnector.csproj.CoreCompileInputs.cache
+D:\source\repos\SkcCurrencyApi\DataConnetor\obj\Debug\netstandard2.0\DataConnector.dll
+D:\source\repos\SkcCurrencyApi\DataConnetor\obj\Debug\netstandard2.0\DataConnector.pdb

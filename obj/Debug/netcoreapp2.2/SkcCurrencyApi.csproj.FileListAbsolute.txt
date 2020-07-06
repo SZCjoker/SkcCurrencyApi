@@ -1,0 +1,2 @@
+D:\source\repos\SkcCurrencyApi\obj\Debug\netcoreapp2.2\SkcCurrencyApi.csprojAssemblyReference.cache
+D:\source\repos\SkcCurrencyApi\obj\Debug\netcoreapp2.2\SkcCurrencyApi.csproj.CoreCompileInputs.cache
