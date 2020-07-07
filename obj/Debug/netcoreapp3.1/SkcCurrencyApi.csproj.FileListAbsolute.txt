@@ -70,3 +70,4 @@ D:\source\repos\SkcCurrencyApi\obj\Debug\netcoreapp3.1\staticwebassets\SkcCurren
 D:\source\repos\SkcCurrencyApi\obj\Debug\netcoreapp3.1\SkcCurrencyApi.dll
 D:\source\repos\SkcCurrencyApi\obj\Debug\netcoreapp3.1\SkcCurrencyApi.pdb
 D:\source\repos\SkcCurrencyApi\obj\Debug\netcoreapp3.1\SkcCurrencyApi.genruntimeconfig.cache
+D:\source\repos\SkcCurrencyApi\obj\Debug\netcoreapp3.1\SkcCurrencyApi.csprojAssemblyReference.cache

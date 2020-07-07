@@ -85,7 +85,6 @@ namespace SkcCurrencyApi.BLL.Application
             var response = datas.Join(details, o => o.CurrencyName, p => p.CurrencyName,
                       (c, s) => new QueryResponse
                       {
-
                           currency_name = c.CurrencyName,
                           currency_cname = c.CurrencyCname,
                           cash_buy = s.CashBuy,

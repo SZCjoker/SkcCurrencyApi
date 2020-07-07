@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SkcCurrencyApi.DAL.Models;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ namespace SkcCurrencyApi.DAL
     public class DatabaseContext: DbContext 
     { 
         public DbSet<Currency> Currency { get; set; }
-        public DbSet<CurrencyDetail> CurrencyDeatil { get; set; }
+        public DbSet<CurrencyDetail> CurrencyDetail { get; set; }
 
         public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options) { }
 
@@ -39,8 +40,13 @@ namespace SkcCurrencyApi.DAL
                     eb.HasNoKey();
                 }
                 {
+                    //var convertor = new ValueConverter<DateTime, string>
+                    //(v=>v.ToString(),v=>(DateTime)Convert.ToDateTime(v));
+                    //eb.HasKey(e => e.Id);
+                    //eb.Property(e => e.LastUpdateTime).HasConversion(convertor);
+
                     eb.HasKey(e => e.Id);
-                    eb.Property(e => e.LastUpdateTime).HasConversion<DateTime>();
+                    
                 }
             });
     }
