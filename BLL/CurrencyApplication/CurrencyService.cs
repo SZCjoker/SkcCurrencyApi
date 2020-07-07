@@ -46,7 +46,7 @@ namespace SkcCurrencyApi.BLL.Application
             var data = new Currency
             {
                 CurrencyName = request.currency_name,
-                CurrencyCname = request.currency_name,
+                CurrencyCname = request.currency_cname,
                 Cdate = date,
                 Udate = date,
                 state = 0
