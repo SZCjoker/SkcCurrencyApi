@@ -23,30 +23,30 @@ namespace SkcCurrencyApi.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateCurrency(OperatorRequest request)
         {
-            return Ok(_sevice.CreateCurrency(request));
+            return Ok(await _sevice.CreateCurrency(request));
         }
 
         [HttpDelete]
         public async Task<IActionResult> DeleteCurrency(OperatorRequest request)
         {
-            return Ok(_sevice.DeleteCurrency(request));
+            return Ok(await _sevice.DeleteCurrency(request));
         }
 
         [HttpPut]
         public async Task<IActionResult> UpdateCurrency(OperatorRequest request)
         {
-            return Ok(_sevice.UpdateCurrency(request));
+            return Ok(await _sevice.UpdateCurrency(request));
         }
 
-        [HttpGet]
+        [HttpGet("Getall")]
         public async Task<IActionResult> GetAllCurrency()
         {
-            return Ok(_sevice.GetALLCurrency());
+            return Ok(await _sevice.GetALLCurrency());
         }
         [HttpGet]
-        public async Task<IActionResult> GetByDate(DateTime exchangeDate)
+        public async Task<IActionResult> GetByDate([FromQuery]string exchangeDate)
         {
-            return Ok(_sevice.GetByDate(exchangeDate));
+            return Ok(await _sevice.GetByDate(exchangeDate));
         }
 
     }

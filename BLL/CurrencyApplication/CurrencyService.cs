@@ -81,7 +81,7 @@ namespace SkcCurrencyApi.BLL.Application
             return new BasicResponse<IEnumerable<QueryResponse>> { code = 0001, data = response, desc = "success" };
         }
 
-        public async ValueTask<BasicResponse<IEnumerable<QueryResponse>>> GetByDate(DateTime exchangeDate)
+        public async ValueTask<BasicResponse<IEnumerable<QueryResponse>>> GetByDate(string exchangeDate)
         {
             var datas = Services.GetQ<Currency>().AllDatas();
             var details = Services.GetQ<CurrencyDetail>().AllDatas();
@@ -94,7 +94,7 @@ namespace SkcCurrencyApi.BLL.Application
                           cash_buy = s.CashBuy,
                           cash_sale = s.CashSale,
                           last_UpdateTime = s.LastUpdateTime
-                      }).Where(t=>t.last_UpdateTime==exchangeDate).OrderByDescending(s=>s.last_UpdateTime).ToList();
+                      }).Where(t=>t.last_UpdateTime== Convert.ToDateTime(exchangeDate)).OrderByDescending(s=>s.last_UpdateTime).ToList();
 
 
             return new BasicResponse<IEnumerable<QueryResponse>> { code = 0001, data = response, desc = "success" };

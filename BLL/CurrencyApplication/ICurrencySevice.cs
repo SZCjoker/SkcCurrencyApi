@@ -16,7 +16,7 @@ public  interface ICurrencySevice
         ValueTask<BasicResponse<bool>> DeleteCurrency(OperatorRequest request);
         ValueTask<BasicResponse<IEnumerable<QueryResponse>>> GetALLCurrency();
 
-        ValueTask<BasicResponse<IEnumerable<QueryResponse>>> GetByDate(DateTime exchangeDate);
+        ValueTask<BasicResponse<IEnumerable<QueryResponse>>> GetByDate(string exchangeDate);
 
     }
 }
