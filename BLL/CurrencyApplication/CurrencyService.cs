@@ -52,7 +52,7 @@ namespace SkcCurrencyApi.BLL.Application
                 state = 0
             };
 
-            var result = Services.GetOp<Currency>().Update(d => d.Id == data.Id, data);
+            var result = Services.GetOp<Currency>().Update(d => d.CurrencyName == data.CurrencyName, data);
 
             return new BasicResponse<bool> { code = 001, data = result, desc = "success" };
         }
@@ -104,13 +104,13 @@ namespace SkcCurrencyApi.BLL.Application
             var data = new Currency
             {
                 CurrencyName = request.currency_name,
-                CurrencyCname = request.currency_name,
+                CurrencyCname = request.currency_cname,
                 Cdate = date,
                 Udate = date,
-                state = 0
+                state = request.state
             };
 
-            var result = Services.GetOp<Currency>().Update(d => d.Id == data.Id, data);
+            var result = Services.GetOp<Currency>().Update(d => d.CurrencyName == data.CurrencyName, data);
 
             return new BasicResponse<bool> { code = 001, data = result, desc = "success" };
         }

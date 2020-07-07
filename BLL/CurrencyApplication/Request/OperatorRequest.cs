@@ -9,5 +9,6 @@ namespace SkcCurrencyApi.BLL.Application.Request
     {
         public string currency_name { get; set; }
         public string currency_cname { get; set; }
+        public int state { get; set; }
     }
 }

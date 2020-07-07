@@ -37,7 +37,19 @@ namespace SkcCurrencyApi.DAL.Repository
 
         public void CreateOrUpdate(Expression<Func<T, bool>> predicate, T instance)
         {
-            throw new NotImplementedException();
+            if (instance == null) throw  new Exception("istance");
+            var IsExist = _context.Set<T>().Any(predicate);//
+
+            if (!IsExist)
+            {
+                _context.Set<T>().Add(instance);
+                SaveChanges();
+            }
+            else
+            {
+                _context.Entry(instance).State = EntityState.Modified;
+                SaveChanges();
+            }
         }
 
         public void Delete(Expression<Func<T, bool>> predicate)
