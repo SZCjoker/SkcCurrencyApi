@@ -20,7 +20,11 @@ namespace SkcCurrencyApi.BLL.Application
             
         }
 
-        //yyyyMMddhhmmss
+        /// <summary>
+        /// 新增
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         public async ValueTask<BasicResponse<bool>> CreateCurrency(OperatorRequest request)
         {
             var date = Convert.ToInt32(DateTimeOffset.UtcNow.ToString("yyyyMMdd"));
@@ -37,26 +41,26 @@ namespace SkcCurrencyApi.BLL.Application
 
             return new BasicResponse<bool> { code=001, data = result, desc= "success" };
         }
-
+        /// <summary>
+        /// 刪除
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         public async ValueTask<BasicResponse<bool>> DeleteCurrency(OperatorRequest request)
         {
 
             var date = Convert.ToInt32(DateTimeOffset.UtcNow.ToString("yyyyMMdd"));
             var time = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
-            var data = new Currency
-            {
-                CurrencyName = request.currency_name,
-                CurrencyCname = request.currency_cname,
-                Cdate = date,
-                Udate = date,
-                state = 0
-            };
-
-            var result = Services.GetOp<Currency>().Update(d => d.CurrencyName == data.CurrencyName, data);
+            var oldData = Services.GetQ<Currency>().DataByKey(d=>d.CurrencyName==request.currency_name);
+            oldData.state = 0;
+            var result = Services.GetOp<Currency>().Update(d => d.CurrencyName == oldData.CurrencyName, oldData);
 
             return new BasicResponse<bool> { code = 001, data = result, desc = "success" };
         }
-
+        /// <summary>
+        /// 取得列表
+        /// </summary>
+        /// <returns></returns>
         public async ValueTask<BasicResponse<IEnumerable<QueryResponse>>> GetALLCurrency()
         {
             
@@ -96,21 +100,23 @@ namespace SkcCurrencyApi.BLL.Application
             return new BasicResponse<IEnumerable<QueryResponse>> { code = 0001, data = response, desc = "success" };
 
         }
-
+        /// <summary>
+        /// 修改
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         public async ValueTask<BasicResponse<bool>> UpdateCurrency(OperatorRequest request)
         {
             var date = Convert.ToInt32(DateTimeOffset.UtcNow.ToString("yyyyMMdd"));
             var time = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
-            var data = new Currency
-            {
-                CurrencyName = request.currency_name,
-                CurrencyCname = request.currency_cname,
-                Cdate = date,
-                Udate = date,
-                state = request.state
-            };
+            var oldData = Services.GetQ<Currency>().DataByKey(d => d.CurrencyName == request.currency_name);
+            oldData.CurrencyName = request.currency_name;
+            oldData.CurrencyCname = request.currency_cname;
+            oldData.state = request.state;
+            oldData.Udate = date;
+            var result = Services.GetOp<Currency>().Update(d => d.CurrencyName == oldData.CurrencyName, oldData);
 
-            var result = Services.GetOp<Currency>().Update(d => d.CurrencyName == data.CurrencyName, data);
+            
 
             return new BasicResponse<bool> { code = 001, data = result, desc = "success" };
         }

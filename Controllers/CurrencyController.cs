@@ -43,7 +43,7 @@ namespace SkcCurrencyApi.Controllers
         {
             return Ok(_sevice.GetALLCurrency());
         }
-
+        [HttpGet]
         public async Task<IActionResult> GetByDate(DateTime exchangeDate)
         {
             return Ok(_sevice.GetByDate(exchangeDate));
