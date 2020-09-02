@@ -43,10 +43,15 @@ namespace SkcCurrencyApi.Controllers
         {
             return Ok(await _sevice.GetALLCurrency());
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="exchangeDate">2020/07/07 13:20:30</param>
+        /// <returns></returns>
         [HttpGet]
         public async Task<IActionResult> GetByDate([FromQuery]string exchangeDate)
         {
-            return Ok(await _sevice.GetByDate(exchangeDate));
+            return Ok(await _sevice.GetByDate(exchangeDate));     
         }
 
     }

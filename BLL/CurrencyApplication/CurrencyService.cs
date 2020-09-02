@@ -63,10 +63,11 @@ namespace SkcCurrencyApi.BLL.Application
         /// <returns></returns>
         public async ValueTask<BasicResponse<IEnumerable<QueryResponse>>> GetALLCurrency()
         {
+
             
             var datas = Services.GetQ<Currency>().AllDatas();
             var details = Services.GetQ<CurrencyDetail>().AllDatas();
-
+            //left join 這是不會跳提示的但是可以過唷
             var response = datas.Join(details, o => o.CurrencyName, p => p.CurrencyName,
                       (c, s) => new QueryResponse {
 

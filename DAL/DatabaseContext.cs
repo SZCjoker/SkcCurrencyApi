@@ -52,5 +52,6 @@ namespace SkcCurrencyApi.DAL
     }
     protected override void OnConfiguring(DbContextOptionsBuilder options)
        => options.UseSqlite(@"Data Source=.\SQLITEDB\Test.db");
+        //要寫相對路徑要放在local資料夾裡
 }
 }
