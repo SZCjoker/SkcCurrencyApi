@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.ResponseCompression;
+using Microsoft.AspNetCore.Server.IISIntegration;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -30,10 +31,24 @@ namespace SkcCurrencyApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.ConfigureDependencyInjections();
+            services.Configure<IISServerOptions>(options =>
+            {
+                options.AutomaticAuthentication = true;
+            });
+            services.AddCors(config=> {
+                config.AddPolicy("CorsPolicy", 
+                    c => c.WithOrigins("http://localhost:80",
+                                       "http://127.0.0.1:80",
+                                       "http://192.168.1.105:80"
+                                 ).AllowAnyOrigin()
+                                 .AllowAnyHeader()
+                                 .AllowAnyMethod()
+                                 .AllowCredentials());
+            });
             services.AddControllers();
             services.AddScoped<ICurrencySevice, CurrencyService>();
             services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
-
+            services.AddAuthentication(IISDefaults.AuthenticationScheme);
             services.AddResponseCompression(options =>
             {
                 IEnumerable<string> MimeTypes = new[]
@@ -56,9 +71,12 @@ namespace SkcCurrencyApi
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors("CorsPolicy");
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

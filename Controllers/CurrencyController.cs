@@ -41,6 +41,7 @@ namespace SkcCurrencyApi.Controllers
         [HttpGet("Getall")]
         public async Task<IActionResult> GetAllCurrency()
         {
+            var adName = User.Identity.Name;
             return Ok(await _sevice.GetALLCurrency());
         }
         /// <summary>
