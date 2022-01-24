@@ -1,6 +1,5 @@
 D:\source\repos\SkcCurrencyApi\bin\Debug\netcoreapp3.1\appsettings.Development.json
 D:\source\repos\SkcCurrencyApi\bin\Debug\netcoreapp3.1\appsettings.json
-D:\source\repos\SkcCurrencyApi\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 D:\source\repos\SkcCurrencyApi\bin\Debug\netcoreapp3.1\SkcCurrencyApi.exe
 D:\source\repos\SkcCurrencyApi\bin\Debug\netcoreapp3.1\SQLITEDB\Test.db
 D:\source\repos\SkcCurrencyApi\bin\Debug\netcoreapp3.1\SkcCurrencyApi.deps.json
@@ -71,3 +70,5 @@ D:\source\repos\SkcCurrencyApi\obj\Debug\netcoreapp3.1\SkcCurrencyApi.dll
 D:\source\repos\SkcCurrencyApi\obj\Debug\netcoreapp3.1\SkcCurrencyApi.pdb
 D:\source\repos\SkcCurrencyApi\obj\Debug\netcoreapp3.1\SkcCurrencyApi.genruntimeconfig.cache
 D:\source\repos\SkcCurrencyApi\obj\Debug\netcoreapp3.1\SkcCurrencyApi.csprojAssemblyReference.cache
+D:\source\repos\SkcCurrencyApi\bin\Debug\netcoreapp3.1\web.config
+D:\source\repos\SkcCurrencyApi\obj\Debug\netcoreapp3.1\scopedcss\bundle\SkcCurrencyApi.styles.css

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "LO3PRyYqXVHzDgNiS8+feprE+dDf4pDjS81QgsnSDUSLbYsyXnQV+88aOuCRgL++5Q8mjb/ZoiVY+AmZGZZJtA==",
+  "dgSpecHash": "bwaRlv6yIG+4gdeiCmE5FusyNGsb3Rf7uehrJN/5WV3xxYYa9rZi3Q13mv52ctN3yOsy1h9cn5Vr3lvtDxblnw==",
   "success": true,
   "projectFilePath": "D:\\source\\repos\\SkcCurrencyApi\\SkcCurrencyApi.csproj",
   "expectedPackageFiles": [
@@ -101,7 +101,8 @@
     "C:\\Users\\neo_7\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\neo_7\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
+    "C:\\Users\\neo_7\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.13\\microsoft.netcore.app.host.win-x64.3.1.13.nupkg.sha512"
   ],
   "logs": []
 }

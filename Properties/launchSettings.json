@@ -1,9 +1,9 @@
 {
   "iisSettings": {
-    "windowsAuthentication": true,
-    "anonymousAuthentication": true,
+    "windowsAuthentication": false,
+    "anonymousAuthentication": false,
     "iis": {
-      "applicationUrl": "http://localhost/SkcCurrencyApi",
+      "applicationUrl": "http://localhost:5000/SkcCurrencyApi",
       "sslPort": 0
     },
     "iisExpress": {
@@ -21,7 +21,7 @@
       }
     },
     "SkcCurrencyApi": {
-      "commandName": "IIS",
+      "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"

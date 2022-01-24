@@ -31,19 +31,19 @@ namespace SkcCurrencyApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.ConfigureDependencyInjections();
-            services.Configure<IISServerOptions>(options =>
-            {
-                options.AutomaticAuthentication = true;
-            });
+            //services.Configure<IISServerOptions>(options =>
+            //{
+            //    options.AutomaticAuthentication = true;
+            //});
             services.AddCors(config=> {
-                config.AddPolicy("CorsPolicy", 
+                config.AddPolicy("CorsPolicy",
                     c => c.WithOrigins("http://localhost:80",
                                        "http://127.0.0.1:80",
                                        "http://192.168.1.105:80"
                                  ).AllowAnyOrigin()
                                  .AllowAnyHeader()
-                                 .AllowAnyMethod()
-                                 .AllowCredentials());
+                                 .AllowAnyMethod());
+                                // .AllowCredentials());
             });
             services.AddControllers();
             services.AddScoped<ICurrencySevice, CurrencyService>();
